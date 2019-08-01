@@ -1,18 +1,18 @@
 
-// RtcSample.h : main header file for the PROJECT_NAME application
+// RtcSample.h : PROJECT_NAME 应用程序的主头文件
 //
 
 #pragma once
 
 #ifndef __AFXWIN_H__
-	#error "include 'stdafx.h' before including this file for PCH"
+	#error "在包含此文件之前包含“stdafx.h”以生成 PCH 文件"
 #endif
 
-#include "resource.h"		// main symbols
+#include "resource.h"		// 主符号
 
 
-// CRtcSampleApp:
-// See RtcSample.cpp for the implementation of this class
+// CRtcSampleApp: 
+// 有关此类的实现，请参阅 RtcSample.cpp
 //
 
 class CRtcSampleApp : public CWinApp
@@ -20,11 +20,11 @@ class CRtcSampleApp : public CWinApp
 public:
 	CRtcSampleApp();
 
-// Overrides
+// 重写
 public:
 	virtual BOOL InitInstance();
 
-// Implementation
+// 实现
 
 	DECLARE_MESSAGE_MAP()
 };

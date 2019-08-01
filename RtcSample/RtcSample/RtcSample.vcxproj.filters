@@ -1,66 +1,189 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
+    <Filter Include="源文件">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
+    <Filter Include="头文件">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="登陆界面">
+      <UniqueIdentifier>{b0bce15b-8877-4a7a-83d7-c1df20ce46e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="主界面">
+      <UniqueIdentifier>{2e1ae704-597b-465b-96ef-1ff78c37e213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="设置界面">
+      <UniqueIdentifier>{2cc8d9ad-6232-462b-a076-2dc6e5f44349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AliRTCSdk">
+      <UniqueIdentifier>{9a781f4e-7903-4c5e-a9c2-4c5036e76a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INCLUDE">
+      <UniqueIdentifier>{4a66898e-6475-47a8-9a97-ec3b96805300}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INCLUDE\CURL">
+      <UniqueIdentifier>{547bc7c2-bc34-489d-9ec7-9478e07a604b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="INCLUDE\JSON">
+      <UniqueIdentifier>{498ed628-c760-43e6-bb72-685abcd16bf2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="XrFunc">
+      <UniqueIdentifier>{950544db-1409-45fc-b74e-af5e2542015f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RtcSample.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RtcSampleDlg.h">
-      <Filter>Header Files</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
+      <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="LoginDlg.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="RtcSampleDlg.h">
+      <Filter>登陆界面</Filter>
+    </ClInclude>
+    <ClInclude Include="RTCSampleMainInterface.h">
+      <Filter>主界面</Filter>
+    </ClInclude>
+    <ClInclude Include="RTCSampleSettingDlg.h">
+      <Filter>设置界面</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\AliLog.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\AliRtcDefine.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\AliRtcEngine.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\AliString.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\Dictionary.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\RemoteParticipant.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AliRTCSdk\include\StringArray.h">
+      <Filter>AliRTCSdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\curl.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\curlbuild.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\curlrules.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\curlver.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\easy.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\mprintf.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\multi.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\stdcheaders.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\CURL\typecheck-gcc.h">
+      <Filter>INCLUDE\CURL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\assertions.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\autolink.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\config.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\features.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\forwards.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\json.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\reader.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\value.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\JSON\writer.h">
+      <Filter>INCLUDE\JSON</Filter>
+    </ClInclude>
+    <ClInclude Include="..\INCLUDE\Log.h">
+      <Filter>XrFunc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RtcSample.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RtcSampleDlg.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LoginDlg.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RtcSampleDlg.cpp">
+      <Filter>登陆界面</Filter>
+    </ClCompile>
+    <ClCompile Include="RTCSampleMainInterface.cpp">
+      <Filter>主界面</Filter>
+    </ClCompile>
+    <ClCompile Include="RTCSampleSettingDlg.cpp">
+      <Filter>设置界面</Filter>
+    </ClCompile>
+    <ClCompile Include="..\INCLUDE\Log.cpp">
+      <Filter>XrFunc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="RtcSample.rc">
-      <Filter>Resource Files</Filter>
+      <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\RtcSample.rc2">
-      <Filter>Resource Files</Filter>
+      <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\RtcSample.ico">
-      <Filter>Resource Files</Filter>
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\configure.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\aliyun.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\LOGO.ico">
+      <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
 </Project>

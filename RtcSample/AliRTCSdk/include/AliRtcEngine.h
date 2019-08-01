@@ -77,6 +77,29 @@ typedef enum {
 } AliRtcVideoProfile;
 
 /**
+* @brief 外接设备状态
+*/
+typedef enum {
+  AliRtcExternalDeviceAdd = 0,      //新增外接设备
+  AliRtcExternalDeviceRemove = 1,   //移除外接设备
+}AliRtcExternalDeviceState;
+
+/**
+* @brief 视频缩放比例
+*/
+typedef enum {
+  AliRtcScaleRatio_16_9 = 0,
+  AliRtcScaleRatio_4_3,
+}AliRtcScaleRatio;
+
+/**
+* @brief OnBye返回类型
+*/
+typedef enum {
+  AliRtcOnByeChannelTerminated = 2,      //频道结束
+}AliRtcOnByeType;
+
+/**
  * @brief 与应用服务器对接的用户建权信息，在joinChannel时使用
  *
  * AliRtc::String, 是SDK自定义的字符串类型
@@ -195,6 +218,8 @@ public:
 	AliVideoCanvas(const AliVideoCanvas &other);
     HWND hWnd;                   ///< could be NULL
     AliRtcRenderMode renderMode; ///< default is AliRenderModeFill
+    AliRtcScaleRatio scaleRatio{ AliRtcScaleRatio_16_9 }; ///< preview scale ratio
+    bool flip;                   ///< if true:mirror filp 
 };
 
 /** 
@@ -250,6 +275,7 @@ public:
 
     /**
      * @brief 被服务器踢出频道的消息
+     * param code onBye类型，详见AliRtcOnByeType
      */
     virtual void onBye(int code) {}
 
@@ -272,6 +298,19 @@ public:
      */
     virtual void onFirstRemoteVideoFrameDrawn(const AliRtc::String &uid, AliRtcVideoTrack videoTrack) {}
 
+    /**
+    * @brief 外接设备状态变更
+    * @param deviceName 外接设备名称
+    * @param state 外接设备状态
+    */
+    virtual void onExternalDeviceStateChange(const AliRtc::String &deviceName, AliRtcExternalDeviceState state) {};
+
+    /**
+    * @brief 首包发送回调
+    * @param audioTrack 是否音频首包发送
+    * @param videoTrack 是否视频首包发送
+    */
+    virtual void onFirstPacketSent(AliRtcAudioTrack audioTrack, AliRtcVideoTrack videoTrack) {};
 };
 
 /**
@@ -660,7 +699,31 @@ public:
      * @brief 选择摄像头
      * @param camera   摄像头名称
      */
-	virtual void setCurrentCamera(const AliRtc::String &camera) = 0;
+    virtual void setCurrentCamera(const AliRtc::String &camera) = 0;
+
+    /**
+    * @brief 开启音频采集
+    * @note 此接口可以控制提前打开音频采集，如果不设置，则SDK会在合适的时机在打开音频采集
+    */
+    virtual void startAudioCapture() = 0;
+
+    /**
+    * @brief 关闭音频采集
+    * @note 此接口可以控制关闭音频采集，与startAudioCapture对应
+    */
+    virtual void stopAudioCapture() = 0;
+
+    /**
+    * @brief 开启音频播放设备
+    * @note 此接口可以控制提前打开音频播放，如果不设置，则SDK会在合适的时机在打开音频播放
+    */
+    virtual void startAudioPlayer() = 0;
+
+    /**
+    * @brief 关闭音频播放
+    * @note 此接口可以控制关闭音频播放，与stopAudioPlayer对应
+    */
+    virtual void stopAudioPlayer() = 0;
 
     //#pragma mark - "其他"
 
@@ -716,13 +779,13 @@ public:
      * @param comp    true: 兼容H5; false: 传统模式，不兼容H5
      * @note 只支持在sdk实例创建之前设置。如果在sdk创建之后改这个设置会引起互通问题。缺省不兼容H5
      */
-    static void setH5CompatibleMode(BOOL comp);
+    static void setH5CompatibleMode(bool comp);
     
     /**
      * @brief 检查当前是否兼容H5
      * @return YES: 兼容H5; NO: 不兼容H5
      */
-    static BOOL getH5CompatibleMode();
+    static bool getH5CompatibleMode();
 
     /**
     * @brief 设置音频音量
@@ -746,7 +809,19 @@ public:
     * @param trace_id
     */
     virtual int setCustomID(const AliRtc::String& trace_id) = 0;
-
+    
+    /**
+     *  @brief 获取拉流的数据
+     *  @param uid  需要查询的userId
+               track 需要查询的媒体流类型
+               key_list 查询key值数组
+               length key_list数组长度
+     *  @return key-value json字符串
+    */ 
+    virtual AliRtc::String getMediaInfoWithKeys(const AliRtc::String& uid,
+        AliRtcVideoTrack track,
+        const AliRtc::String key_list[],
+        int length) = 0;
 protected:
     // 不允许直接创建和销毁AliRtcEngine instance
     // 使用sharedInstance和destroy
