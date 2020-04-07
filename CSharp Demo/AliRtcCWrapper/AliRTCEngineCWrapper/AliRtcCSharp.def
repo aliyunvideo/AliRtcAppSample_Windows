@@ -1,0 +1,40 @@
+; AliRtcCSharp.def : 声明 DLL 的模块参数。
+
+LIBRARY
+
+EXPORTS
+    ; 此处可以是显式导出
+	initAliSdk    @1
+	releaseAliSdk    @2
+	joinChannel    @3
+	setLocalViewConfig    @4
+	setJoinResultCallBack    @5
+	setLogLevel    @6
+	setAutoPublishSubscribe    @7
+	configLocalAudioPublish    @8
+	configLocalCameraPublish    @9
+	exitChannel    @10
+	configLocalSimulcast    @11
+	setRemoteUserOnLineNotifyCallBack    @12
+	setRemoteUserOffLineNotifyCallBack    @13
+	setRemoteTrackAvailableNotifyCallBack    @14
+	setSubscribeChangedNotifyCallBack    @15
+	configRemoteAudio    @16
+	configRemoteCameraTrack    @17
+	configRemoteScreenTrack    @18
+	setOccurErrorCallBack    @19
+	setOccurWarningCallBack    @20
+	setByeCallBack    @21
+	subscribe    @22
+	setSubscribeResultCallBack    @23
+	setRemoteViewConfig    @24
+	setAudioOnlyMode    @25
+	stopPreview    @26
+	muteLocalCamera    @27
+	configLocalScreenPublish    @28
+	publish    @29
+	setPublishResultCallBack    @30
+	startPreview    @31
+	setVideoProfile    @32
+	setH5CompatibleMode    @33
+	muteLocalMic    @34
